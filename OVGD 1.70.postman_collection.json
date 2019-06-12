@@ -160,7 +160,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://{{ip}}/rest/appliances/5d742011-4b21-4dca-9573-edc51b3646cf/sso",
+					"raw": "https://{{ip}}/rest/appliances/5b14482c-2c57-4aeb-a545-9d06c1c8aec8",
 					"protocol": "https",
 					"host": [
 						"{{ip}}"
@@ -168,8 +168,7 @@
 					"path": [
 						"rest",
 						"appliances",
-						"5d742011-4b21-4dca-9573-edc51b3646cf",
-						"sso"
+						"5b14482c-2c57-4aeb-a545-9d06c1c8aec8"
 					]
 				}
 			},
@@ -218,6 +217,46 @@
 		{
 			"name": "https://{{ip}}/rest/groups",
 			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-API-Version",
+						"value": "2"
+					},
+					{
+						"key": "auth",
+						"value": "{{Token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{ip}}/rest/groups",
+					"protocol": "https",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"rest",
+						"groups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://{{ip}}/rest/groups",
+			"request": {
 				"method": "POST",
 				"header": [
 					{
@@ -239,7 +278,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"name\":\"Pramod\"}"
+					"raw": "{\"name\":\"Test\"}"
 				},
 				"url": {
 					"raw": "https://{{ip}}/rest/groups",
@@ -250,6 +289,51 @@
 					"path": [
 						"rest",
 						"groups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://{{ip}}/rest/groups/6e007aa6-46da-42d6-8c02-01b3cedaaa27",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json-patch+json"
+					},
+					{
+						"key": "X-API-Version",
+						"value": "2"
+					},
+					{
+						"key": "auth",
+						"value": "{{Token}}"
+					},
+					{
+						"key": "If-Match",
+						"value": "2"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"op\":\"replace\",\"path\":\"/name\",\"value\":\"PramodRenamed\"}]"
+				},
+				"url": {
+					"raw": "https://{{ip}}/rest/groups/ab8fa44f-c9e7-4523-83cb-daeff399b198",
+					"protocol": "https",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"rest",
+						"groups",
+						"ab8fa44f-c9e7-4523-83cb-daeff399b198"
 					]
 				}
 			},
@@ -279,10 +363,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"name\":\"Pramod\"}"
+					"raw": ""
 				},
 				"url": {
-					"raw": "https://{{ip}}/rest/groups/186a1562-e3ea-4af6-8379-fcbf6abacbf4",
+					"raw": "https://{{ip}}/rest/groups/b3bf21f4-886f-4cc6-9acb-15c18ef6bd60",
 					"protocol": "https",
 					"host": [
 						"{{ip}}"
@@ -290,7 +374,7 @@
 					"path": [
 						"rest",
 						"groups",
-						"186a1562-e3ea-4af6-8379-fcbf6abacbf4"
+						"b3bf21f4-886f-4cc6-9acb-15c18ef6bd60"
 					]
 				}
 			},
@@ -331,51 +415,6 @@
 					"path": [
 						"rest",
 						"server-hardware"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "https://{{ip}}/rest/groups/6e007aa6-46da-42d6-8c02-01b3cedaaa27",
-			"request": {
-				"method": "PATCH",
-				"header": [
-					{
-						"key": "Accept",
-						"value": "application/json"
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json-patch+json"
-					},
-					{
-						"key": "X-API-Version",
-						"value": "2"
-					},
-					{
-						"key": "auth",
-						"value": "{{Token}}"
-					},
-					{
-						"key": "If-Match",
-						"value": "3"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "[{\"op\":\"add\",\"path\":\"/members/-\",\"value\":\"/rest/server-hardware/3a3b3b3b-5f53-4aa5-b330-19ea68565ba3\"}]"
-				},
-				"url": {
-					"raw": "https://{{ip}}/rest/groups/209792b2-968b-4514-9320-0338974cd85a",
-					"protocol": "https",
-					"host": [
-						"{{ip}}"
-					],
-					"path": [
-						"rest",
-						"groups",
-						"209792b2-968b-4514-9320-0338974cd85a"
 					]
 				}
 			},
